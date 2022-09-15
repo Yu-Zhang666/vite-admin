@@ -1,18 +1,26 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
+import {useCartStore} from '../stores/cart'
 defineProps<{ msg: string }>()
-
-const count = ref(0)
+const count =ref (0)
+const cart = useCartStore()
+function countPlus(){
+  count.value++
+  cart.addItem(count.value)
+}
+const list=useCartStore()
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <el-button>sdees</el-button>
+    <el-button>ww</el-button>
+    <button type="button" @click="countPlus">count is {{ count }}</button>
+    <p v-for="index in cart.items" :index="index">{{index}}</p>
     <p>
-      Edit
+      
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
