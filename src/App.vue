@@ -7,7 +7,7 @@ import Album from './views/album/index.vue'
 
 <template>
   <div class="album">
-    <h2>test</h2>
+    <h2>tests</h2>
     <Album />
   </div>
 </template>
